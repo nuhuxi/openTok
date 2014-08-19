@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Empty Box</title>
+	<link type="text/css" rel="stylesheet" href="display-test.css"/>
+    <script src="//static.opentok.com/webrtc/v2.2/js/opentok.min.js" ></script>
+
+</head>
+<body>
+
+
+</body>
+<script type="text/javascript">
+  var apiKey    = "44950832";
+  var sessionId = "1_MX40NDk1MDgzMn5-VHVlIEF1ZyAxOSAxMToyODoxMCBQRFQgMjAxNH4wLjAyODI2MDI5fn4";
+  var token     = "T1==cGFydG5lcl9pZD00NDk1MDgzMiZzaWc9YjdmYzUyNWJjYWM2NDhiNGFlYTg4MzFlMWViNGFmMDhhNmU3MWMwNDpyb2xlPXN1YnNjcmliZXImc2Vzc2lvbl9pZD0yX01YNDBORGsxTURnek1uNS1WSFZsSUVGMVp5QXhPU0F4TVRveU9Ub3hNU0JRUkZRZ01qQXhOSDR3TGpRME9EYzRPRGc0Zm40JmNyZWF0ZV90aW1lPTE0MDg0NzMwNjMmbm9uY2U9MC43NTI4NTUzMDEyNzMxMDgmZXhwaXJlX3RpbWU9MTQxMTA2NDg0OQ==";
+ 
+  var session = OT.initSession(apiKey, sessionId);
+ 
+  session.on("streamCreated", function(event) {
+    session.subscribe(event.stream);
+  });
+ 
+  session.connect(token, function(error) {
+    var publisher = OT.initPublisher();
+    session.publish(publisher);
+  });
+</script>
+</html>
